@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioValor Burkina | Agriculture Bio & Développement Durable</title>
+    
+    <!-- Polices Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2c5e3a;   /* Vert profond - Terre africaine */
+            --secondary: #e9b44c;  /* Jaune or - Soleil du Burkina */
+            --accent: #9e6240;     /* Terre cuite - Artisanat local */
+            --light: #f8f4e9;      /* Fond ivoire */
+            --dark: #2d2a26;       /* Texte foncé */
+            --blue: #3a7d7d;       /* Bleu - Eau et vie */
+            --pattern: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,100 M100,0 L0,100" stroke="%232c5e3a" stroke-width="1" opacity="0.1"/></svg>');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+            background-image: var(--pattern);
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(249,247,237,0.8) 0%, rgba(248,244,233,0.9) 100%);
+            z-index: -1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* En-tête - Style professionnel */
+        header {
+            background-color: var(--primary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--primary);
+            border: 2px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            color: white;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.2rem;
+            letter-spacing: 1px;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            display: block;
+            transition: all 0.3s;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: 2px solid transparent;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: var(--secondary);
+        }
+
+        nav ul li a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: var(--secondary);
+        }
+
+        /* Section Héro - Design africain */
+        .hero {
+            background: linear-gradient(rgba(44, 94, 58, 0.85), rgba(44, 94, 58, 0.9)), url('https://images.unsplash.com/photo-1560785477-d43d2b34e0df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path d="M20,20 Q50,5 80,20 T100,50 Q85,80 50,100 T0,50 Q15,20 50,0 T100,50" fill="none" stroke="%23e9b44c" stroke-width="0.5" opacity="0.3"/></svg>');
+            background-size: 300px;
+            opacity: 0.4;
+        }
+
+        .hero-text {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .hero-text p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            font-style: italic;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 16px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+            font-size: 1.2rem;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+            border: 2px solid rgba(255,255,255,0.3);
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s;
+        }
+
+        .btn:hover {
+            background-color: #d9a53d;
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Sections Axes - Style professionnel */
+        .axe-section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-title h2 {
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-weight: 800;
+        }
+
+        .section-content {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+            border: 1px solid rgba(158, 98, 64, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+
+        .section-content h3 {
+            color: var(--primary);
+            margin-bottom: 1.8rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-content h3::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 80%;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        .section-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .defis-astuces {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .defis, .astuce {
+            flex: 1;
+            min-width: 300px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .defis::before, .astuce::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+        }
+
+        .defis::before {
+            background: var(--blue);
+        }
+
+        .astuce::before {
+            background: var(--primary);
+        }
+
+        .defis h3, .astuce h3 {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 2.5rem;
+        }
+
+        .research-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.4s;
+            border-top: 5px solid var(--primary);
+            position: relative;
+        }
+
+        .research-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .research-content {
+            padding: 25px;
+        }
+
+        .research-content h5 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .research-content p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .research-ref {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 2.5rem;
+        }
+
+        .tip-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--secondary);
+            transition: transform 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tip-card h5 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Galerie Photo - Style africain */
+        .gallery-section {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, var(--light), #f0e9d8);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            transition: transform 0.5s;
+            background: white;
+            position: relative;
+            border: 1px solid rgba(158, 98, 64, 0.2);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) rotate(1deg);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item p {
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            font-weight: 600;
+            color: var(--dark);
+            background: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+        }
+
+        /* Carte des Coopératives */
+        .map-section {
+            padding: 5rem 0;
+            background-color: #2c5e3a;
+            color: white;
+        }
+
+        .map-container {
+            margin-top: 2.5rem;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 500px;
+            position: relative;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .map-placeholder i {
+            font-size: 5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .map-placeholder p {
+            margin: 0.8rem 0;
+            max-width: 700px;
+            font-size: 1.2rem;
+        }
+
+        /* Blog Scientifique */
+        .blog-section {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #f8f9fa, #e9f5e9);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            margin-top: 3rem;
+        }
+
+        .blog-post {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.4s;
+            position: relative;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 5px solid var(--secondary);
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .meta {
+            color: #777;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 1.15rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Contact - Style professionnel */
+        .contact-section {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #f8f4e9, #e9e1cc);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(158, 98, 64, 0.15);
+            position: relative;
+        }
+        
+        .contact-form {
+            flex: 2;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(158, 98, 64, 0.15);
+            position: relative;
+        }
+        
+        .contact-info h3, .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .contact-info h3::before, .contact-form h3::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 80%;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+        
+        .contact-detail {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding-left: 10px;
+            border-left: 3px solid var(--secondary);
+            transition: all 0.3s;
+        }
+        
+        .contact-detail:hover {
+            border-left-color: var(--accent);
+            transform: translateX(10px);
+        }
+        
+        .contact-detail i {
+            color: var(--accent);
+            font-size: 1.4rem;
+            min-width: 30px;
+            background: rgba(233, 180, 76, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-detail p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            background: rgba(249, 247, 237, 0.5);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(44, 94, 58, 0.2);
+            background: white;
+        }
+        
+        .form-group textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 16px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            border: none;
+            cursor: pointer;
+            border: 2px solid rgba(255,255,255,0.3);
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .submit-btn::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #d9a53d;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+        
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            text-align: center;
+            border-left: 5px solid #28a745;
+            font-size: 1.1rem;
+        }
+
+        /* Footer amélioré - Style professionnel */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path d="M20,20 C40,10 60,10 80,20 C90,40 90,60 80,80 C60,90 40,90 20,80 C10,60 10,40 20,20 Z" fill="none" stroke="%23e9b44c" stroke-width="0.5" opacity="0.1"/></svg>');
+            background-size: 200px;
+            opacity: 0.1;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-about h3 {
+            margin-bottom: 1.8rem;
+            color: var(--secondary);
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-about h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-about p {
+            opacity: 0.85;
+            margin-top: 1.5rem;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 1.8rem;
+            color: var(--secondary);
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+            padding: 10px 0;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .footer-links a::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--secondary);
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 30px;
+        }
+
+        .footer-links a:hover::before {
+            left: 8px;
+        }
+
+        .footer-contact h3 {
+            margin-bottom: 1.8rem;
+            color: var(--secondary);
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-contact h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-contact p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.6rem;
+            transition: all 0.3s;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(233, 180, 76, 0.3);
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary);
+            background: rgba(233, 180, 76, 0.2);
+            transform: translateY(-5px) scale(1.1);
+            border-color: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            font-size: 1.1rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .copyright p {
+            margin: 10px 0;
+        }
+
+        .copyright i {
+            color: var(--secondary);
+            margin: 0 10px;
+        }
+
+        /* Art africain décoratif */
+        .african-pattern {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .pattern-1 {
+            top: 10%;
+            left: 5%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%232c5e3a" stroke-width="2"/><circle cx="50" cy="50" r="30" fill="none" stroke="%232c5e3a" stroke-width="1.5"/><circle cx="50" cy="50" r="20" fill="none" stroke="%232c5e3a" stroke-width="1"/></svg>');
+        }
+
+        .pattern-2 {
+            bottom: 10%;
+            right: 5%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%232c5e3a" stroke-width="2"/><path d="M30,30 L70,30 L70,70 L30,70 Z" fill="none" stroke="%232c5e3a" stroke-width="1.5"/><path d="M40,40 L60,40 L60,60 L40,60 Z" fill="none" stroke="%232c5e3a" stroke-width="1"/></svg>');
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-text h2 {
+                font-size: 3rem;
+            }
+            
+            .hero-text p {
+                font-size: 1.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                justify-content: center;
+                margin-bottom: 1.5rem;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+            
+            .hero {
+                height: 80vh;
+            }
+            
+            .hero-text h2 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .defis-astuces {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 75vh;
+            }
+            
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+            
+            nav ul li a {
+                padding: 0.7rem 1rem;
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Décoration africaine -->
+    <div class="african-pattern pattern-1"></div>
+    <div class="african-pattern pattern-2"></div>
+
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>BioValor Burkina</h1>
+                        <p>Racines Bio, Récoltes Durables</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#accueil" class="active">Accueil</a></li>
+                        <li><a href="#agriculture">Agriculture</a></li>
+                        <li><a href="#valorisation">Valorisation</a></li>
+                        <li><a href="#securite">Sécurité Alimentaire</a></li>
+                        <li><a href="#environnement">Environnement</a></li>
+                        <li><a href="#galerie">Galerie</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Héro -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h2>L'Agriculture Bio au Cœur du Burkina Faso</h2>
+                <p>Valorisons nos terres, nourrissons notre avenir</p>
+                <a href="#agriculture" class="btn">Découvrir nos actions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Axe 1 : Agriculture Biologique -->
+    <section id="agriculture" class="axe-section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-seedling"></i> Agriculture Biologique Durable</h2>
+            </div>
+            
+            <div class="section-content">
+                <h3><i class="fas fa-book-open"></i> Contexte et Enjeux</h3>
+                <p>L'agriculture représente ~33 % du PIB et emploie plus de 70 % de la population active burkinabè, majoritairement rurale. C'est une agriculture familiale diversifiée (mil, sorgho, maïs, niébé, arachide, etc.) souvent pratiquée de manière traditionnelle.</p>
+                <p>Les pratiques ancestrales (techniques Zai, demi-lunes, cordons pierreux) sont mises en avant pour restaurer la fertilité et capter l'eau. La cohabitation élevage/cultures est fréquente pour valoriser les pâturages.</p>
+                <p><strong>Objectifs :</strong> Assurer la sécurité alimentaire nationale, augmenter les revenus agricoles, moderniser sans détruire l'environnement.</p>
+            </div>
+
+            <div class="section-content">
+                <h3><i class="fas fa-exclamation-triangle"></i> Défis et Solutions</h3>
+                <div class="defis-astuces">
+                    <div class="defis">
+                        <h3><i class="fas fa-times-circle"></i> Défis</h3>
+                        <p><strong>Dégradation des terres :</strong> Épuisement continu des sols, variabilité climatique avec sécheresses récurrentes.</p>
+                        <p><strong>Ressources limitées :</strong> Accès limité à l'eau et aux semences améliorées.</p>
+                        <p><strong>Infrastructures :</strong> Manque d'infrastructures (irrigation, stockage, routes rurales) et de capitaux.</p>
+                        <p><strong>Organisation :</strong> Dispersion des petits exploitants, faible formation technique.</p>
+                    </div>
+                    <div class="astuce">
+                        <h3><i class="fas fa-lightbulb"></i> Solutions Proposées</h3>
+                        <p><strong>Coopératives agricoles :</strong> Mutualiser outils et achats pour réduire les coûts.</p>
+                        <p><strong>Microcrédits :</strong> Financement ciblé pour irrigation solaire et équipements.</p>
+                        <p><strong>Formation :</strong> Centres de formation agricole et extension rurale renforcée.</p>
+                        <p><strong>Politique de prix :</strong> Prix d'achat minimum pour soutenir les cultivateurs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-content">
+                <h3><i class="fas fa-flask"></i> Recherches Innovantes</h3>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Optimisation du Zai amélioré</h5>
+                            <p>Étudier l'ajout d'amendements (compost, biochar local) dans les trous de Zai pour maximiser l'infiltration d'eau et la nutrition des plantes.</p>
+                            <span class="research-ref">Réf : CILSS, 2023</span>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Systèmes agroforestiers hybrides</h5>
+                            <p>Recherche sur des combinaisons de cultures vivrières et d'arbres (baobab, jujubier) pour retenir l'eau et enrichir les sols.</p>
+                            <span class="research-ref">Réf : ICRAF, 2024</span>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Agriculture de précision rurale</h5>
+                            <p>Développement de capteurs et drones économiques pour guider l'irrigation et détecter précocement les maladies.</p>
+                            <span class="research-ref">Réf : INERA, 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Axe 2 : Valorisation -->
+    <section id="valorisation" class="axe-section" style="background: linear-gradient(to bottom, #f0f5e9, #e1ebdf);">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-recycle"></i> Valorisation des Produits Agricoles</h2>
+            </div>
+            
+            <div class="section-content">
+                <h3><i class="fas fa-book-open"></i> Contexte et Enjeux</h3>
+                <p>Le Burkina dispose de nombreux produits locaux (graines de karité, anacardes, mangues, baobab, poisson fumé) et d'artisanats. Côté culinaire, il existe une forte tradition de saveurs locales (piment, soumbala) et de techniques de conservation traditionnelles (fumage, séchage).</p>
+                <p>Des PME/start-ups locales innovent (ex. "Feuilles Fraîches & Clean") montrant un potentiel de transformation sur place des matières premières.</p>
+            </div>
+
+            <div class="section-content">
+                <h3><i class="fas fa-exclamation-triangle"></i> Défis et Solutions</h3>
+                <div class="defis-astuces">
+                    <div class="defis">
+                        <h3><i class="fas fa-times-circle"></i> Défis</h3>
+                        <p><strong>Industrie peu développée :</strong> Transformation locale limitée favorisant les importations.</p>
+                        <p><strong>Conservation :</strong> Manque d'infrastructures (chambres froides, semi-industries).</p>
+                        <p><strong>Qualité :</strong> Faible accès à la certification sanitaire internationale.</p>
+                        <p><strong>Financement :</strong> Difficile accès au crédit pour les entrepreneurs locaux.</p>
+                    </div>
+                    <div class="astuce">
+                        <h3><i class="fas fa-lightbulb"></i> Solutions Proposées</h3>
+                        <p><strong>Pôles agro-industriels :</strong> Créer des foyers de transformation locale.</p>
+                        <p><strong>Financement :</strong> Simplifier l'accès au crédit (fonds garants).</p>
+                        <p><strong>Incitations :</strong> Fiscalité avantageuse pour l'équipement industriel.</p>
+                        <p><strong>Export :</strong> Partenariats avec diaspora pour exporter les produits "Made in Burkina".</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-content">
+                <h3><i class="fas fa-flask"></i> Recherches Innovantes</h3>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Traçabilité numérique</h5>
+                            <p>Développer une application blockchain simple pour assurer la traçabilité du champ à l'assiette.</p>
+                            <span class="research-ref">Réf : ITC, 2023</span>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Nouveaux produits locaux</h5>
+                            <p>R&D sur la diversification (boissons fermentées au mil, jus de baobab enrichis).</p>
+                            <span class="research-ref">Réf : ICRISAT, 2023</span>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Emballages écoresponsables</h5>
+                            <p>Étude de films biodégradables issus de matières premières locales (fibre de coton, pulpe d'ananas).</p>
+                            <span class="research-ref">Réf : Biomat, 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Axe 3 : Sécurité Alimentaire -->
+    <section id="securite" class="axe-section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-shield-alt"></i> Sécurité Alimentaire & Qualité</h2>
+            </div>
+            
+            <div class="section-content">
+                <h3><i class="fas fa-book-open"></i> Contexte et Enjeux</h3>
+                <p>La malnutrition infantile et l'insécurité alimentaire sont des défis majeurs, aggravés par plus de dix ans de crises et de conflits internes. L'alimentation quotidienne reste peu diversifiée (céréales de base), entraînant carences nutritionnelles.</p>
+                <p>Populations les plus touchées : femmes enceintes, jeunes enfants, déplacés internes et agriculteurs des zones à récolte unique par an.</p>
+            </div>
+
+            <div class="section-content">
+                <h3><i class="fas fa-exclamation-triangle"></i> Défis et Solutions</h3>
+                <div class="defis-astuces">
+                    <div class="defis">
+                        <h3><i class="fas fa-times-circle"></i> Défis</h3>
+                        <p><strong>Conflits :</strong> Perturbation des récoltes et des marchés par l'insécurité.</p>
+                        <p><strong>Infrastructure :</strong> Mauvaise conservation post-récolte, routes impraticables en saison des pluies.</p>
+                        <p><strong>Accès aux marchés :</strong> Difficulté d'accès aux marchés urbains pour les surplus ruraux.</p>
+                        <p><strong>Nutrition :</strong> Dépendance au sorgho/millet; manque de protéines et micronutriments.</p>
+                    </div>
+                    <div class="astuce">
+                        <h3><i class="fas fa-lightbulb"></i> Solutions Proposées</h3>
+                        <p><strong>Éducation nutritionnelle :</strong> Ateliers cuisine pour diversifier les régimes alimentaires.</p>
+                        <p><strong>Magasins communautaires :</strong> Vente de produits diversifiés à prix accessibles.</p>
+                        <p><strong>Aides alimentaires :</strong> Systèmes de "bons alimentaires" en période de soudure.</p>
+                        <p><strong>Diversification :</strong> Renforcer pisciculture et aviculture villageoise.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-content">
+                <h3><i class="fas fa-flask"></i> Recherches Innovantes</h3>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Plateforme SMS/USSD agricole</h5>
+                            <p>Service d'information par SMS pour diffuser prévisions météo, prix de marché et conseils de conservation.</p>
+                            <span class="research-ref">Réf : HelloDuty, 2023</span>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Techniques de stockage durable</h5>
+                            <p>Systèmes solaires de séchage et silos métalliques pour réduire les pertes céréalières.</p>
+                            <span class="research-ref">Réf : FAO, 2022</span>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Jardins maraîchers urbains</h5>
+                            <p>Modélisation de fermes verticales dans les villes/écoles pour améliorer l'accès aux légumes frais.</p>
+                            <span class="research-ref">Réf : Première Urgence, 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Axe 4 : Environnement & Développement Durable -->
+    <section id="environnement" class="axe-section" style="background: linear-gradient(to bottom, #e9f5e9, #d7ebd7);">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-tree"></i> Environnement & Développement Durable</h2>
+            </div>
+            
+            <div class="section-content">
+                <h3><i class="fas fa-book-open"></i> Contexte et Enjeux</h3>
+                <p>Le Burkina Faso est fortement touché par la désertification : entre 2002 et 2013, 19% du territoire a subi une dégradation avancée des sols et une déforestation massive. Or 80% de la population dépend du secteur primaire (agriculture, élevage, foresterie).</p>
+                <p>Les projets de "mise en défens" clôturent et régénèrent des parcelles dégradées, avec des résultats encourageants (près de 1 219 hectares restaurés et 136 952 arbres plantés).</p>
+            </div>
+
+            <div class="section-content">
+                <h3><i class="fas fa-exclamation-triangle"></i> Défis et Solutions</h3>
+                <div class="defis-astuces">
+                    <div class="defis">
+                        <h3><i class="fas fa-times-circle"></i> Défis</h3>
+                        <p><strong>Climat :</strong> Baisse des précipitations, sécheresses prolongées et crues soudaines.</p>
+                        <p><strong>Dégradation :</strong> Coupes incontrôlées, surpâturage, incidence sur la qualité de l'eau et de l'air.</p>
+                        <p><strong>Biodiversité :</strong> Perte progressive d'espèces végétales et animales.</p>
+                        <p><strong>Financement :</strong> Manque d'investissements pour la restauration écologique.</p>
+                    </div>
+                    <div class="astuce">
+                        <h3><i class="fas fa-lightbulb"></i> Solutions Proposées</h3>
+                        <p><strong>Espaces protégés :</strong> Renforcer les zones villageoises protégées (agroforesterie).</p>
+                        <p><strong>Ressources en eau :</strong> Augmenter les retenues d'eau (barrages, étangs).</p>
+                        <p><strong>Financement :</strong> Participatif de plantations et éducation environnementale.</p>
+                        <p><strong>Suivi :</strong> Mise en place de systèmes de suivi satellite de la dégradation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-content">
+                <h3><i class="fas fa-flask"></i> Recherches Innovantes</h3>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Cartographie participative</h5>
+                            <p>App mobile/USSD pour signaler les parcelles dégradées ou restaurées, permettant de surveiller la désertification.</p>
+                            <span class="research-ref">Réf : MRV Burkina, 2024</span>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Reforestation accélérée</h5>
+                            <p>Techniques rapides (pépinières vivantes) pour restaurer les savanes arbustives.</p>
+                            <span class="research-ref">Réf : WBI, 2023</span>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <div class="research-content">
+                            <h5>Capteurs environnementaux</h5>
+                            <p>Prototypes IoT pour mesurer humidité du sol et qualité de l'air dans les fermes villageoises.</p>
+                            <span class="research-ref">Réf : ICRAF, 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Photo -->
+    <section id="galerie" class="gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-camera"></i> Notre Burkina en Images</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Femmes agricultrices" loading="lazy">
+                    <p>Femmes agricultrices dans les champs</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Récolte de mil" loading="lazy">
+                    <p>Récolte traditionnelle du mil</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Marché local" loading="lazy">
+                    <p>Marché de produits locaux</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1593692909680-3fccb0d477b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Techniques agricoles" loading="lazy">
+                    <p>Techniques agricoles traditionnelles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carte des Coopératives -->
+    <section id="carte" class="map-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;"><i class="fas fa-map-marked-alt"></i> Carte des Coopératives Partenaires</h2>
+            </div>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Notre réseau de coopératives est en construction</p>
+                    <p>Revenez bientôt pour découvrir nos partenaires à travers le Burkina Faso</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Devenir partenaire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Scientifique -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-flask"></i> Actualités Scientifiques</h2>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <img src="https://images.unsplash.com/photo-1593692909680-3fccb0d477b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Agroécologie sahélienne" loading="lazy">
+                    <div class="blog-content">
+                        <h3>Nouvelles Perspectives en Agroécologie Sahélienne</h3>
+                        <p class="meta">15 juin 2024 | Par Dr. Aminata Ouédraogo</p>
+                        <p>Une étude récente révèle que l'intégration des techniques EM avec les pratiques traditionnelles burkinabè augmente la résilience des sols de 45% face aux sécheresses...</p>
+                        <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-post">
+                    <img src="https://images.unsplash.com/photo-1593692909680-3fccb0d477b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Biocontrôle" loading="lazy">
+                    <div class="blog-content">
+                        <h3>Avancées dans le Biocontrôle des Ravageurs</h3>
+                        <p class="meta">2 juin 2024 | Par Prof. Jean Kaboré</p>
+                        <p>Des chercheurs de l'INERA ont développé un bio-pesticide à base de neem et de piment dont l'efficacité dépasse 85% contre les principaux ravageurs des cultures maraîchères...</p>
+                        <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-post">
+                    <img src="https://images.unsplash.com/photo-1593692909680-3fccb0d477b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Innovation nutritionnelle" loading="lazy">
+                    <div class="blog-content">
+                        <h3>Fortification Naturelle des Aliments de Base</h3>
+                        <p class="meta">28 mai 2024 | Par Dr. Fatimata Sawadogo</p>
+                        <p>Une innovation prometteuse permet d'enrichir le sorgho en fer et zinc grâce à des associations culturales spécifiques, combattant ainsi les carences nutritionnelles...</p>
+                        <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section de contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-envelope"></i> Contactez-Nous</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3><i class="fas fa-info-circle"></i> Nos Coordonnées</h3>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <p><strong>Email:</strong> kaboresawahamed@gmail.com</p>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <p><strong>Téléphone:</strong> +226 07 10 56 31</p>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p><strong>Adresse:</strong> Ouagadougou, Secteur 15, Burkina Faso</p>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
+                        <p><strong>Horaires:</strong> Lundi-Vendredi: 8h-17h</p>
+                    </div>
+                    
+                    <div class="social-icons" style="margin-top: 40px;">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> Envoyez un Message</h3>
+                    
+                    <form id="contactForm" action="https://formspree.io/f/mvojrzkq" method="POST">
+                        <input type="hidden" name="_subject" value="Nouveau message de BioValor Burkina">
+                        
+                        <div class="form-group">
+                            <label for="name">Votre nom complet</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Votre adresse email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet du message</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Votre message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Envoyer le message</button>
+                        
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i> Votre message a été envoyé avec succès !
+                            <p>Nous vous répondrons très rapidement.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>BioValor Burkina</h3>
+                    <p>Engagés pour une agriculture biologique et durable au Burkina Faso. Nous valorisons nos ressources locales et formons les agriculteurs aux techniques écologiques modernes.</p>
+                    <p>Ensemble, cultivons un avenir meilleur pour notre terre et notre peuple.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="#agriculture">Agriculture Biologique</a></li>
+                        <li><a href="#valorisation">Valorisation des Produits</a></li>
+                        <li><a href="#securite">Sécurité Alimentaire</a></li>
+                        <li><a href="#environnement">Environnement</a></li>
+                        <li><a href="#galerie">Galerie Photos</a></li>
+                        <li><a href="#blog">Actualités Scientifiques</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> kaboresawahamed@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +226 07 10 56 31</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Ouagadougou, Secteur 15</p>
+                    <a href="#contact" class="btn" style="margin-top: 25px; display: inline-block;">Écrivez-nous</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 BioValor Burkina - Tous droits réservés</p>
+                <p>Site conçu <i class="fas fa-heart"></i> avec passion pour le Burkina Faso</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Mise à jour de la navigation active
+                    document.querySelectorAll('nav ul li a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Gestion du formulaire de contact
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Affichage du message de succès
+                const successMessage = document.getElementById('successMessage');
+                if (successMessage) {
+                    successMessage.style.display = 'block';
+                }
+                
+                // Envoi réel du formulaire
+                const formData = new FormData(this);
+                
+                // Utilisation de Formspree pour l'envoi des emails
+                fetch('https://formspree.io/f/mvojrzkq', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Réinitialisation du formulaire
+                        contactForm.reset();
+                    } else {
+                        alert("Une erreur s'est produite. Veuillez réessayer.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                });
+            });
+        }
+
+        // Animation des éléments au défilement
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.section-content, .research-card, .tip-card, .blog-post').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+        
+        // Ajout du style pour les animations
+        const style = document.createElement('style');
+        style.textContent = `
+            .fade-in {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+            
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
